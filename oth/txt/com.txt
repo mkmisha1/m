@@ -1,0 +1,97 @@
+4 Raspberry Pi (uni):
+
+up:
+sudo apt-get update && sudo apt-get upgrade
+
+ip:
+local--
+sudo hostname -I
+out--
+sudo hostname -i
+
+temp:
+vcgencmd measure_temp
+watch -n 1 "vcgencmd measure_temp"
+[1 - 1s]
+
+
+oth------------------------------------------------------------
+
+
+start instald nukkit:
+cd /home/pi/nukkit && echo ip && sudo hostname -I && java -jar nukkit.jar
+
+
+pi hole:
+sudo apt-get update && sudo apt-get upgrade && curl -sSL https://install.pi-hole.net | bash
+
+
+omv:
+sudo adduser pi ssh && sudo apt-get update && sudo apt-get upgrade -y && sudo reboot
+wget -O - https://raw.githubusercontent.com/OpenMediaVault-Plugin-Developers/installScript/master/install | sudo bash
+
+
+apache2:
+sudo apt-get install apache2 -y && hostname -I && sudo service apache2 restart
+
+root-> pi:
+sudo chown pi: html
+
+install php:
+sudo apt install php7.3 php7.3-mbstring php7.3-mysql php7.3-curl php7.3-gd php7.3-zip -y
+
+
+ncl:
+sudo apt-get install apache2 -y && sudo apt-get install php7.3 php7.3-gd sqlite php7.3-sqlite3 php7.3-curl php7.3-zip php7.3-xml php7.3-mbstring && sudo service apache2 restart
+
+cd /var/www/html && curl https://download.nextcloud.com/server/releases/nextcloud-18.0.1.tar.bz2 | sudo tar -jxv && sudo mkdir -p /var/www/html/nextcloud/data && sudo chown -R www-data:www-data /var/www/html/nextcloud/ && sudo chmod 750 /var/www/html/nextcloud/data
+sudo mkdir -p /var/nextcloud && sudo mv -v /var/www/html/nextcloud/data /var/nextcloud/data && cd /var/www/html/nextcloud/config && sudo cp -p config.php config.php.bk && sudo nano config.php
+	'datadirectory' => '/var/nextcloud/data',
+sudo nano /etc/php/7.3/apache2/php.ini
+	post_max_size = 1024M
+	upload_max_filesize = 1024M
+sudo service apache2 restart
+sudo nano /etc/apache2/apache2.conf
+	<Directory /var/www/>        
+        	Options Indexes FollowSymLinks
+	        AllowOverride All
+        	Require all granted
+	</Directory>
+sudo service apache2 restart
+sudo mkdir -p /etc/apache2/ssl && sudo openssl req -x509 -nodes -days 720 -newkey rsa:4096 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+sudo a2enmod ssl && sudo nano /etc/apache2/sites-available/default-ssl.conf
+	SSLCertificateFile /etc/apache2/ssl/apache.crt
+	SSLCertificateKeyFile /etc/apache2/ssl/apache.key
+sudo a2ensite default-ssl.conf && sudo service apache2 restart
+//////////////////////////////////////////////////////////////
+sudo nano /etc/apache2/sites-available/000-default.conf
+	<VirtualHost *:80>
+		ServerAdmin mkmisha0001@gmail.com
+		
+		RewriteEngine On
+		RewriteCond %{HTTPS} off
+		RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [R=301,L]
+	</VirtualHost>
+sudo a2enmod rewrite && sudo service apache2 restart
+sudo nano /var/www/html/nextcloud/config/config.php
+'trusted_domains' =>
+	array (
+		0 => '192.168.1.105',
+		1 => 'exemple.com',
+	),
+
+
+mine server:
+sudo apt-get update && sudo apt-get upgrade -y && sudo raspi-config
+	Advanced Options->Memory Split [16]
+sudo reboot
+
+sudo apt install default-jdk && mkdir ~/nukkit && cd ~/nukkit && wget -O nukkit.jar https://go.pimylifeup.com/3xsPQA/nukkit && java -jar nukkit.jar
+	conig file:
+nano nukkit.yml
+nano server.properties
+	update:
+cd ~/nukkit && wget -O nukkit.jar https://go.pimylifeup.com/3xsPQA/nukkit && java -jar nukkit.jar
+
+
+diskmgmt.msc

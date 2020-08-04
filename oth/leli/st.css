@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    font-family: "DejaVu Sans Mono";
+    text-align: center;
+    font-size: 6vh;
+    font-family: monospace;
+}
+header{
+    margin: 0 0 10px 0;
+}
+
+span {
+    //border: 1px solid; //dashed;
+    //border-radius: 5px;
+}

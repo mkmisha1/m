@@ -1,0 +1,35 @@
+body {margin: 0;}
+.main {
+    margin: 25vh 0 0vh 0;
+    text-align: center;
+    font-family: 'MuseoModerno', monospace;
+    font-size: 10vh;
+    height: 60vh;
+}
+.logo {
+    //border-radius: 2000px;//r
+    margin: 0 0 10vh;
+    height: 40vh;
+}
+hr {
+    background-color: #000; /* Цвет линии */
+    color: #000; /* Цвет линии для IE6-7 */
+    border: none;
+    height: 10px;
+    width: 99vw;
+    margin: 0;
+}
+.mk {
+    cursor: vertical-text;
+}
+.li {
+    font-family: 'MuseoModerno', monospace;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    cursor: context-menu;
+}
+.soc {
+    text-align: center;
+    font-size: 7vh;
+}

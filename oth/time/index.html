@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+        <meta http-equiv="refresh" content="600;URL=" />
+    
+    <meta charset="UTF-8">
+    <title>time</title>
+    <link rel="icon" href="https://img.icons8.com/cotton/2x/time.png">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 45vh 0 0 0;
+            font-family: "MuseoModernoXXX", monospace;
+            text-align: center;
+            font-size: 10vh;
+        }
+    </style>
+</head>
+<body>
+    <span id="time">...</span>
+
+    <script type="text/javascript">  
+        setInterval(function () {  
+            date = new Date(),  
+                h = date.getHours(),
+                m = date.getUTCMinutes(),
+                s = date.getUTCSeconds(),
+                
+                ms = date.getUTCMilliseconds(),
+                
+                dd = date.getUTCDate(),
+                md = date.getUTCMonth() + 1,
+                yd = date.getFullYear(),
+                h = (h < 10) ? '0' + h : h,
+                m = (m < 10) ? '0' + m : m,
+                s = (s < 10) ? '0' + s : s,
+                
+                dd = (dd < 10) ? '0' + dd : dd,
+                md = (md < 10) ? '0' + md : md,
+                ms = (ms < 10) ? '0' + ms : ms,
+                ms = (ms < 100) ? '0' + ms : ms,
+                document.getElementById('time').innerHTML = dd + "." + md + "." + yd + " " + h + ':' + m + ':' + s + " " + ms;  
+        }, 1);  
+    </script>
+
+    </body>
+</html>

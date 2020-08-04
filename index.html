@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+        <meta http-equiv="refresh" content="600;URL=http://192.168.1.120"/><!--10m-->
+    
+    <meta charset="UTF-8">
+    <title>main</title>
+    <link rel="icon" href="https://maxcdn.icons8.com/Android_L/PNG/96/Household/real_estate-96.png" type="image">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet"><!--;600-->
+    <style>
+        body {
+            font-family: 'MuseoModerno', monospace;
+            margin: 0;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+            font-size: 50px;
+            font-weight: 500;
+            margin: 0 0 0 2%;
+        }
+        a:hover {
+            //font-weight: 600;
+            //transition-delay: 5s;
+        }
+        .m {
+            font-size: 60px;
+            width: 40vw;
+        }
+        .mk {
+            font-size: 70px;
+            text-decoration-line: underline;
+        }
+        .more {
+            color: #555;
+        }
+        
+        .r {
+            color: #f00;
+        }
+        .g {
+            color: #0f0;
+        }
+        .b {
+            color: #33f;
+        }
+        .y {
+            color: #ff0;
+        }
+        .f {
+            color: #fff;
+        }
+        
+        .hed {
+            float: left; /* Обтекание по правому краю */
+            //border: 1px solid #f00;
+            width: 90%;
+            height: 100px;
+            margin-bottom: 1px;
+            overflow: hidden;
+        }
+        .hed2 {
+            //width: 50%;
+            //border: 1px solid #0f0;
+            height: 100px;
+            text-align: right;
+        }
+        .time {
+            cursor: pointer;
+            //font-family: monospace;
+            margin-right: 10px;
+        }
+        .atime {
+            font-size: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    
+    <div>
+        <div class="hed">
+            <a href="http://192.168.1.120/" class="m" title="server ip dress">192.168.1.120</a> <a href="mk/" class="mk" title="creator page"> by mk</a></div> 
+        <div class="hed2">
+            <a class="atime" href="oth/time/"><span class="time" id="time" title="time">time</span></a>
+        </div>
+    </div>
+    
+    
+    <!--<a href="nextcloud/">nextcloud</a><br>-->
+    <a href="www/">www</a><a class="f">*</a><br><!--www-->
+    <a href="mk/">mkm</a><a class="f">*</a><br><!--mk-->
+    <a href="bbq/">bbq</a><a class="f">*</a><br><!--bbq-->
+    <a href="403/">kek</a><a class="r">*</a><br><!--kek-->
+    <a href="xtd/">xtd</a><a class="f">*</a><br><!--xtd-->
+    <a href="wifi/">wifi</a><a class="f">*</a><br><!--wifi-->
+    <br>
+    <br>
+    <!--<a href="x/">x</a><a class="g">*</a><br><!--x-->
+    <a href="basket/" class="more">basket</a><a class="f">*</a><br><!--basket-->
+    <a href="https://priler.github.io/dino3d/low.html" class="more" title="dino 3D online game" target="_blank">dino</a><a class="f">*</a><br><!--https://priler.github.io/dino3d/-->
+    
+    
+
+    <script type="text/javascript">  
+        setInterval(function () {  
+            date = new Date(),  
+                h = date.getHours(),
+                m = date.getUTCMinutes(),
+                s = date.getUTCSeconds(),
+                
+                ms = date.getUTCMilliseconds(),
+                
+                dd = date.getUTCDate(),
+                md = date.getUTCMonth() + 1,
+                yd = date.getFullYear(),
+                h = (h < 10) ? '0' + h : h,
+                m = (m < 10) ? '0' + m : m,
+                s = (s < 10) ? '0' + s : s,
+                
+                dd = (dd < 10) ? '0' + dd : dd,
+                md = (md < 10) ? '0' + md : md,
+                ms = (ms < 10) ? '0' + ms : ms,
+                ms = (ms < 100) ? '0' + ms : ms,
+                document.getElementById('time').innerHTML = /*dd + "." + md + "." + yd + " " +*/ h + ':' + m + ':' + s;// + " " + ms;  
+        }, 1000);
+    </script>
+    
+    
+</body>
+</html>
